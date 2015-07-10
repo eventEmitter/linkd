@@ -217,13 +217,17 @@
 
 		it('events should work', function() {
 			var   list = new LinkedList()
-				, events = ['remove', 'remove', 'pop', 'add', 'push', 'remove', 'shift', 'add', 'unshift', 'add', 'addAfter', 'add', 'addBefore']
+				, events = ['remove', 'remove', 'pop', 'add', 'push', 'remove', 'shift', 'add', 'unshift', 'add', 'addAfter', 'add', 'addBefore',
+							'removeNode', 'removeNode', 'popNode', 'addNode', 'pushNode', 'removeNode', 'shiftNode', 'addNode', 'unshiftNode', 'addNode', 'addAfterNode', 'addNode', 'addBeforeNode']
 				, arr = [];
 
 			events.forEach(function(evt) {
-				list.on(evt, function() {
+				list.on(evt, function(val) {
 					var index = events.indexOf(evt);
 					events.splice(index, 1);
+					
+					if (evt.substr(-4) === 'Node') assert(typeof val === 'object');
+					else assert(typeof val === 'string');
 				})
 			});
 

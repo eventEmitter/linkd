@@ -124,12 +124,20 @@ Removes the last item from the list
 
     var removedValue = list.shift(hash);
 
+If you want the removed node instead of the value
+
+    var removedNode = list.shiftNode(hash);
+
 
 ### Pop
 
 Removes the first item from the list
 
-    var removedValue = list.shift(hash);
+    var removedValue = list.pop(hash);
+
+If you want the removed node instead of the value
+
+    var removedNode = list.popNode(hash);
 
 
 ### Remove
@@ -137,6 +145,10 @@ Removes the first item from the list
 Removes an item addressed by hash
 
     var removedValue = list.remove(hash);
+
+If you want the removed node instead of the value
+
+    var removedNode = list.removeNode(hash);
 
 
 
@@ -154,6 +166,15 @@ The list emits events for each action performed on it. The availbel events are:
 - pop
 - addBefore
 - addAfter
+
+- removeNode
+- addNode
+- popNode
+- unshiftNode
+- shiftNode
+- popNode
+- addBeforeNode
+- addAfterNode
 
 
 
@@ -184,6 +205,10 @@ Use the Iterable interface:
 ## Node
 
 The node retreived via the `getNode` method has the following interface
+
+### Hash
+
+the hash property holds the hash this node is stored on
 
 
 ### HasNext

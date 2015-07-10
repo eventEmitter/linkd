@@ -23,7 +23,7 @@ You may use any type as the hash value for your items, not only strings.
 
 ### Constructor
 
-Create an instance o the linked list
+Create an instance fo the linked list
 
     var list = new Linkd();
 
@@ -162,23 +162,25 @@ Events that have the value of the item passed to
 
 - `remove`: emitted when a node was removed using one of the `remove`, `pop`, `shift`, `removeNode`, `popNode` or `shiftNode` methods
 - `add`: emitted when a node was added using one of the `add`, `addAfter`, `addBefore`, `unshift`, `push`, `addNode`, `addAfterNode`, `addBeforeNode`, `unshiftNode` or `pushNode` methods
-- `pop`: emitted when a node was removed using the `pop` method
+- `pop`: emitted when a node was removed using the `pop` or `popNode` method
 - `unshift`: emitted when a node was added using the `unshift` method
-- `shift`: emitted when a node was removed using the `shift` method
+- `shift`: emitted when a node was removed using the `shift` or `shiftNode` method
 - `push`: emitted when a node was added using the `push` method
 - `addBefore`: emitted when a node was added using the `addBefore` method
 - `addAfter`: emitted when a node was added using the `addAfter` method
+- `get`: emitted when a node was returned using the `get` or `getNode` method
 
 Events that have the node of the item passed to
 
 - `removeNode`: emitted when a node was removed using one of the `remove`, `pop`, `shift`, `removeNode`, `popNode` or `shiftNode` methods
 - `addNode`: emitted when a node was added using one of the `add`, `addAfter`, `addBefore`, `unshift`, `push`, `addNode`, `addAfterNode`, `addBeforeNode`, `unshiftNode` or `pushNode` methods
-- `popNode`: emitted when a node was removed using the `pop` method
+- `popNode`: emitted when a node was removed using the `pop` or `popNode` method
 - `unshiftNode`: emitted when a node was added using the `unshift` method
-- `shiftNode`: emitted when a node was removed using the `shift` method
+- `shiftNode`: emitted when a node was removed using the `shift` or `shiftNode` method
 - `pushNode`: emitted when a node was added using the `push` method
 - `addBeforeNode`: emitted when a node was added using the `addBefore` method
 - `addAfterNode`: emitted when a node was added using the `addAfter` method
+- `getNode`: emitted when a node was returned using the `get` or `getNode` method
 
 
 

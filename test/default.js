@@ -215,6 +215,32 @@
 
 
 
+
+		it('moving nodes should work', function() {
+			var   list = new LinkedList()
+				, arr = [];
+
+			list.push(1, 'a');
+			list.push(2, 'b');
+			list.push(3, 'c');
+			list.push(4, 'd');
+			list.push(5, 'e');
+			list.push(6, 'f');
+			list.push(7, 'g');
+
+
+			list.moveAfter(1, 7);
+			list.moveBefore(2, 7);
+			list.moveToBegin(3);
+			list.moveToEnd(5);
+
+			for (var x of list) arr.push(x);
+
+			assert.deepEqual(arr, ['c', 'b', 'g', 'a', 'f', 'd', 'e']);
+		});
+
+
+
 		it('events should work', function() {
 			var   list = new LinkedList()
 				, events = ['remove', 'remove', 'pop', 'add', 'push', 'remove', 'shift', 'add', 'unshift', 'add', 'addAfter', 'add', 'addBefore',
@@ -225,7 +251,7 @@
 				list.on(evt, function(val) {
 					var index = events.indexOf(evt);
 					events.splice(index, 1);
-					
+
 					if (evt.substr(-4) === 'Node') assert(typeof val === 'object');
 					else assert(typeof val === 'string');
 				})

@@ -13,14 +13,93 @@ for node. 0.12+, io.js
 
 ## API
 
-The linked list implements the ES6 Iterable Interface. You ma us the ES6
-`for (var x in list)` loop on the list. If you like to convert the lsit
-into an array you may do so using the `Array.from(list)` method or the
-ES6 spread operator `[...list]`.
+The linked list implements the
+[ES6 Iterable Interface](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols).
+You ma us the ES6 `for (var x in list)` loop on the list. If you like to convert
+the list into an array you may do so using the `Array.from(list)` method or the
+ES6 spread operator `[...list]`. See
+[Iterables and iterators in ECMAScript 6](http://www.2ality.com/2015/02/es6-iteration.html)
+on how to use them.
 
 You may use any type as the hash value for your items, not only strings.
 
+### Method Overview
 
+**Getting Nodes**
+- `get(hash)`: get a value by its hash
+- `getNode(hash)`: get a node by its hash
+- `getFirst(hash)`: get the first value by its hash
+- `getFirstNode(hash)`: get the first node by its hash
+- `getLast(hash)`: get the last value by its hash
+- `getLastNode(hash)`: get the last node by its hash
+
+**Checking if a node exists**
+- `has(hash)`: checks if a given hash exists in the list
+
+**Adding Nodes**
+- `push(hash|node, [value])`: adds a node to the begining of the list
+- `unshift(hash|node, [value])`: adds a node to the end of the list
+- `addBefore(hash|node, [value], beforeHash|node)`: adds a node before another node
+- `addAfter(hash|node, [value], beforeHash|node)`: adds a node after another node
+
+**Moving Nodes**
+- `moveBefore(hash|node, hash|node)`: move a node before another node
+- `moveAfter(hash|node, hash|node)`: move a node after another node
+- `moveToBegin(hash|node)`: move a node to the begin of the list
+- `moveToEnd(hash|node)`: move a node to the end of a list
+
+**Removing Nodes**
+- `remove(node|hash)`: removes a specific node. returns the value of the removed node or undefined if the node was not found
+- `removeNode(node|hash)`:  removes a specific node, returns the node or nulll it the node was not found
+- `pop()`: remove the first node, returns the value or undefined if the node was not found
+- `popNode()`: remove the first node, returns the node or null if the node was not found
+- `shift()`: removes the last node, returns the value or undefined if the node was not found
+- `shiftNode()`: removes the last node, returns the node or null if the node was not found
+
+**Node Methods**
+- `hasNext()`: returns true if the node has a next node
+- `hasPrevious()`: returns true if the node has a previous node
+- `isFrist()`: returns true if the node is the first node
+- `isLast()`: returns true if the node is the last node
+- `getNext()`: returns the next node
+- `getPrevious()`: returns the previous node
+
+**Getting All Keys**
+- `keys()`: Returns an [ES6 Iterator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols) containing all keys. The keys are not ordered.
+
+### Properties
+- `length`: integer, the number of items in the linked list
+
+### Events
+
+The list emits events for each action performed on it.
+
+Events that have the value of the item passed to
+
+- `remove`: emitted when a node was removed using one of the `remove`, `pop`, `shift`, `removeNode`, `popNode` or `shiftNode` methods
+- `add`: emitted when a node was added using one of the `add`, `addAfter`, `addBefore`, `unshift`, `push`, `addNode`, `addAfterNode`, `addBeforeNode`, `unshiftNode` or `pushNode` methods
+- `pop`: emitted when a node was removed using the `pop` or `popNode` method
+- `unshift`: emitted when a node was added using the `unshift` method
+- `shift`: emitted when a node was removed using the `shift` or `shiftNode` method
+- `push`: emitted when a node was added using the `push` method
+- `addBefore`: emitted when a node was added using the `addBefore` method
+- `addAfter`: emitted when a node was added using the `addAfter` method
+- `get`: emitted when a node was returned using the `get` or `getNode` method
+
+Events that have the node of the item passed to
+
+- `removeNode`: emitted when a node was removed using one of the `remove`, `pop`, `shift`, `removeNode`, `popNode` or `shiftNode` methods
+- `addNode`: emitted when a node was added using one of the `add`, `addAfter`, `addBefore`, `unshift`, `push`, `addNode`, `addAfterNode`, `addBeforeNode`, `unshiftNode` or `pushNode` methods
+- `popNode`: emitted when a node was removed using the `pop` or `popNode` method
+- `unshiftNode`: emitted when a node was added using the `unshift` method
+- `shiftNode`: emitted when a node was removed using the `shift` or `shiftNode` method
+- `pushNode`: emitted when a node was added using the `push` method
+- `addBeforeNode`: emitted when a node was added using the `addBefore` method
+- `addAfterNode`: emitted when a node was added using the `addAfter` method
+- `getNode`: emitted when a node was returned using the `get` or `getNode` method
+
+
+## Examples
 ### Constructor
 
 Create an instance fo the linked list
@@ -153,38 +232,6 @@ If you want the removed node instead of the value
 
 
 
-
-## Events
-
-The list emits events for each action performed on it.
-
-Events that have the value of the item passed to
-
-- `remove`: emitted when a node was removed using one of the `remove`, `pop`, `shift`, `removeNode`, `popNode` or `shiftNode` methods
-- `add`: emitted when a node was added using one of the `add`, `addAfter`, `addBefore`, `unshift`, `push`, `addNode`, `addAfterNode`, `addBeforeNode`, `unshiftNode` or `pushNode` methods
-- `pop`: emitted when a node was removed using the `pop` or `popNode` method
-- `unshift`: emitted when a node was added using the `unshift` method
-- `shift`: emitted when a node was removed using the `shift` or `shiftNode` method
-- `push`: emitted when a node was added using the `push` method
-- `addBefore`: emitted when a node was added using the `addBefore` method
-- `addAfter`: emitted when a node was added using the `addAfter` method
-- `get`: emitted when a node was returned using the `get` or `getNode` method
-
-Events that have the node of the item passed to
-
-- `removeNode`: emitted when a node was removed using one of the `remove`, `pop`, `shift`, `removeNode`, `popNode` or `shiftNode` methods
-- `addNode`: emitted when a node was added using one of the `add`, `addAfter`, `addBefore`, `unshift`, `push`, `addNode`, `addAfterNode`, `addBeforeNode`, `unshiftNode` or `pushNode` methods
-- `popNode`: emitted when a node was removed using the `pop` or `popNode` method
-- `unshiftNode`: emitted when a node was added using the `unshift` method
-- `shiftNode`: emitted when a node was removed using the `shift` or `shiftNode` method
-- `pushNode`: emitted when a node was added using the `push` method
-- `addBeforeNode`: emitted when a node was added using the `addBefore` method
-- `addAfterNode`: emitted when a node was added using the `addAfter` method
-- `getNode`: emitted when a node was returned using the `get` or `getNode` method
-
-
-
-
 ## Iterating over all values
 
 Use the Iterable interface:
@@ -202,8 +249,6 @@ Use the Iterable interface:
     for (var key of list.keys()) {
         log(key);
     }
-
-
 
 
 

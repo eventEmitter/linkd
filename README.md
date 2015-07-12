@@ -15,13 +15,14 @@ for node. 0.12+, io.js
 
 The linked list implements the
 [ES6 Iterable Interface](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols).
-You ma us the ES6 `for (var x in list)` loop on the list. If you like to convert
-the list into an array you may do so using the `Array.from(list)` method or the
-ES6 spread operator `[...list]`. See
-[Iterables and iterators in ECMAScript 6](http://www.2ality.com/2015/02/es6-iteration.html)
+You may use the ES6 [`for (var x of list)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+loop on the list. If you like to convert the list into an array you may do so using
+the `Array.from(list)` method or the ES6 spread operator
+[`[...list]`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator).
+See [Iterables and iterators in ECMAScript 6](http://www.2ality.com/2015/02/es6-iteration.html)
 on how to use them.
 
-You may use any type as the hash value for your items, not only strings.
+You may use ***any*** type as the hash value for your items, not only strings.
 
 ### Method Overview
 

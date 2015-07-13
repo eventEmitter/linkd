@@ -1,7 +1,7 @@
 {
       "name"                        : "linkd"
     , "description"                 : "A fast and extendable doubly linked list"
-    , "version"                     : "0.3.1"
+    , "version"                     : "0.3.2"
     , "homepage"                    : "https://github.com/eventEmitter/linkd"
     , "author"                      : "Michael van der Weg <michael@joinbox.com> (http://joinbox.com/)"
     , "license"                     : "MIT"

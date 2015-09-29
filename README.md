@@ -29,10 +29,10 @@ You may use ***any*** type as the hash value for your items, not only strings.
 **Getting Nodes**
 - `get(hash)`: get a value by its hash
 - `getNode(hash)`: get a node by its hash
-- `getFirst(hash)`: get the first value by its hash
-- `getFirstNode(hash)`: get the first node by its hash
-- `getLast(hash)`: get the last value by its hash
-- `getLastNode(hash)`: get the last node by its hash
+- `getFirst()`: get the first value by its hash
+- `getFirstNode()`: get the first node by its hash
+- `getLast()`: get the last value by its hash
+- `getLastNode()`: get the last node by its hash
 
 **Checking if a node exists**
 - `has(hash)`: checks if a given hash exists in the list

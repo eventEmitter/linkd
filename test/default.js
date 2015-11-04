@@ -267,4 +267,28 @@
 
 			assert(events.length === 0);
 		});
+
+
+
+		it('should emit the drain event correctly', function(done) {
+			var list = new LinkedList();
+
+			
+			list.on('drain', () => {
+				assert(!list.length);
+				done();
+			});
+
+
+			list.push(1, 'a');
+			list.push(2, 'b');
+			list.push(3, 'c');
+			list.push(4, 'd');
+			list.push(5, 'e');
+			list.push(6, 'f');
+			list.push(7, 'g');
+
+			
+			for (var i = 0, l = list.length; i < l; i++) list.shift();
+		});
 	});

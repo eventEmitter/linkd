@@ -75,6 +75,10 @@ You may use ***any*** type as the hash value for your items, not only strings.
 
 The list emits events for each action performed on it.
 
+Unspecific events
+
+- `drain`: is emitted if the list is empty after an item was removed
+
 Events that have the value of the item passed to
 
 - `remove`: emitted when a node was removed using one of the `remove`, `pop`, `shift`, `removeNode`, `popNode` or `shiftNode` methods

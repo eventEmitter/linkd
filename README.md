@@ -3,7 +3,7 @@
 A fast and extendable doubly linked list
 
 
-for node. 0.12+, io.js
+for node 6+
 
 
 [![npm](https://img.shields.io/npm/dm/linkd.svg?style=flat-square)](https://www.npmjs.com/package/linkd)

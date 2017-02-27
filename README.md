@@ -24,6 +24,10 @@ on how to use them.
 
 You may use ***any*** type as the hash value for your items, not only strings.
 
+
+Attention: many methods work have similar names as those on native arrays but may actually work not the same: the push method on an array adds an element to the end of the array, he push method on the linkd list adds an element to the beginning of the list.
+
+
 ### Method Overview
 
 **Getting Nodes**

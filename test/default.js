@@ -48,6 +48,24 @@
 		});
 
 
+		it('should corrently save unshifted and push nodes', function() {
+			var   list = new LinkedList()
+				, arr = [];
+
+			list.push(10, 'x');
+			list.unshift(1, 'a');
+			list.unshift(2, 'b');
+			list.unshift(3, 'c');
+			list.unshift(4, 'd');
+			list.push(11, 'y');
+			list.unshift(5, 'e');
+
+			for (var x of list) arr.push(x);
+
+			assert.deepEqual(arr, ['e', 'd', 'c', 'b', 'a', 'x', 'y'].reverse());
+		});
+
+
 		it('should corrently save addAfter nodes', function() {
 			var   list = new LinkedList()
 				, arr = [];

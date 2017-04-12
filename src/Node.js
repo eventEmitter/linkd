@@ -1,4 +1,4 @@
-!function() {
+{
     'use strict';
 
 
@@ -30,8 +30,19 @@
             this.value = value;
 
             // save the links
-            Class.define(this, 'previousNode', Class(previousNode || null).Writable().Configurable().Enumerable());
-            Class.define(this, 'nextNode', Class(nextNode || null).Writable().Configurable().Enumerable());
+            Object.defineProperty(this, 'previousNode', {
+                  value: (previousNode || null)
+                , writable: true
+                , enumerable: true
+                , configurable: true
+            });
+
+            Object.defineProperty(this, 'nextNode', {
+                  value: (nextNode || null)
+                , writable: true
+                , enumerable: true
+                , configurable: true
+            });
         }
 
 
@@ -95,4 +106,4 @@
             return this.previousNode || null;
         }
     };
-}();
+}

@@ -1,6 +1,6 @@
 !function() {
 
-	module.exports = require('./lib/Linkd');
-	module.exports.Node = require('./lib/Node');
+	module.exports = require('./src/Linkd');
+	module.exports.Node = require('./src/Node');
 
 }();

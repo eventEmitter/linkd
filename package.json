@@ -1,7 +1,7 @@
 {
       "name"                        : "linkd"
     , "description"                 : "A fast and extendable doubly linked list"
-    , "version"                     : "2.0.0"
+    , "version"                     : "3.0.0"
     , "homepage"                    : "https://github.com/eventEmitter/linkd"
     , "author"                      : "Michael van der Weg <michael@joinbox.com> (http://joinbox.com/)"
     , "license"                     : "MIT"
@@ -10,13 +10,13 @@
         , "type"                    : "git"
     }
     , "engines": {
-        "node"                      : ">=v6"
+        "node"                      : ">=v7.7"
     }
     , "bugs": {
         "url"                       : "https://github.com/eventEmitter/linkd/issues"
     }
     , "dependencies": {
-          "ee-event-emitter"        : "0.3.x"
+          "ee-event-emitter"        : "1.x"
         , "ee-log"                  : "1.x"
     }
     , "devDependencies": {

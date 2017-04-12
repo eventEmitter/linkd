@@ -1,10 +1,8 @@
-!function() {
+{
     'use strict';
 
 
-
-
-    
+   
     const log           = require('ee-log');
     const EventEmitter  = require('ee-event-emitter');
     const Node          = require('./Node');
@@ -42,23 +40,23 @@
             super();
 
             // the map hoofding the linked list
-            Class.define(this, 'map', Class(new Map()).Writable());
+            Object.defineProperty(this, 'map', {writable: true, value: new Map()});
 
             // reference to the first item
-            Class.define(this, 'firsNode', Class(null).Writable().Configurable());
+            Object.defineProperty(this, 'firsNode', {writable: true, value: null, configurable: true});
 
             // reference to the last item
-            Class.define(this, 'lastNode', Class(null).Writable().Configurable());
+            Object.defineProperty(this, 'lastNode', {writable: true, value: null, configurable: true});
 
 
 
             // the user may pass a custom type for the map items
             if (CustomType){
                 if (new CustomType().identifier === Node.identifier) throw new Error('The custom type must inherit from the LinkedList.Node class!');
-                Class.define(this, 'Node', Class(CustomType));
+                Object.defineProperty(this, 'Node', {value: CustomType});
             }
             else {
-                Class.define(this, 'Node', Class(Node));
+                Object.defineProperty(this, 'Node', {value: Node});
             }
 
 
@@ -789,7 +787,7 @@
         clear() {
 
             // create a new map
-            Class.define(this, 'map', Class(new  Map()).Writable());
+            Object.defineProperty(this, 'map', {writable: true, value: new Map()});
 
             // clear nodes
             this.lastNode = null;
@@ -874,4 +872,4 @@
             };
         }
     };
-}();
+};

@@ -1,5 +1,7 @@
 # linkd
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/eventEmitter/linkd.svg)](https://greenkeeper.io/)
+
 A fast and extendable doubly linked list
 
 
